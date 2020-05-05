@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
@@ -16,23 +8,7 @@ import {
   Dimensions
 } from 'react-native';
 
-/*
-#113c4a
-#265a5c
-#3f7b70
-#dddddd
-#3b6978
-#dae1e7
-#00909e
-#27496d
-#142850
-*/
 
-const BACKGROUND_COLOR = '#142850';
-const BOX_COLOR = '#27496d';
-const BORDER_COLOR = '#27496d';
-const FONT_COLOR_UP = '#dddddd';
-const FONT_COLOR_SUB = '#dae1e7';
 
 //[1] criação do hook com as informações atualizadas a cada rotação da tela.
 const screenDimensions = () => {
@@ -62,7 +38,7 @@ const screenDimensions = () => {
 };
 
 
-const App = () => {
+const Example_1_Views = () => {
 
   //utilização do hook [1]
   const screenInfoUpdated = screenDimensions();
@@ -70,21 +46,23 @@ const App = () => {
 
   return (
     <>
-      <StatusBar barStyle='dark-content' backgroundColor={BACKGROUND_COLOR} />
-      <SafeAreaView style={styles.container}>
+      <StatusBar barStyle='light-content' backgroundColor={'#142850'} />
+      <SafeAreaView style={styles.container}>        
         <View style={[
           styles.box,
           {
             width: screenInfoUpdated.width / 2,
-            height: screenInfoUpdated.height / 2,
+           
           }
         ]}>
+          <Text style={styles.upText}>Com o Hook</Text>
           <Text style={styles.upText}>Orientação</Text>
           <Text style={styles.subText}>{isLandscape ? 'Landscape' : 'Portait'}</Text>
           <Text style={styles.upText}>_ width</Text>
-          <Text style={styles.subText}>{screenData.width}</Text>
+          <Text style={styles.subText}>{screenInfoUpdated.width}</Text>
           <Text style={styles.upText}>| height</Text>
-          <Text style={styles.subText}>{screenData.height}</Text>
+          <Text style={styles.subText}>{screenInfoUpdated.height}</Text>
+          <Text style={styles.subText}>{`Note que os valores \n são atualizados`}</Text>
         </View>
       </SafeAreaView>
     </>
@@ -94,30 +72,35 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: BACKGROUND_COLOR,
+    backgroundColor: '#142850',
     justifyContent: 'center',
     alignItems: 'center',
   },
   box: {
-    backgroundColor: BOX_COLOR,
+    backgroundColor: '#27496d',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: BORDER_COLOR,
+    borderColor: '#27496d',
     elevation: 5,
   },
   upText: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: FONT_COLOR_UP,
+    color: '#dddddd',
   },
   subText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: FONT_COLOR_SUB,
+    color: '#dae1e7',
+  },
+  smallText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#dae1e7',
   },
 
 });
 
-export default App;
+export default Example_1_Views;

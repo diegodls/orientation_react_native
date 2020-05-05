@@ -14,7 +14,7 @@ export const screenDimensions = () => {
 
     return {
         ...screenInfo,
-        isLandscape: screenInfo.width > screenInfo.height
+        isPortait: screenInfo.width < screenInfo.height
     };
 
 };
