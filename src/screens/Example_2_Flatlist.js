@@ -12,7 +12,6 @@ import { screenDimensions } from '../constants/orientation';
 import ListItem from '../components/ListItem';
 import { posts } from '../obj/posts'
 
-
 const Example_2_Flatlist = () => {
 
     const screenOrientation = screenDimensions();
